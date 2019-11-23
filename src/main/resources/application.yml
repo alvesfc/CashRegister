@@ -17,7 +17,21 @@ spring:
     always-use-message-format: true
     basename: i18n/messages
     encoding: UTF-8
-
+  #############################################################################
+  ## JPA Configuration
+  #############################################################################
+  jpa:
+    database: H2
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    generate-ddl: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+        temp:
+          use_jdbc_metadata_defaults: false
 #############################################################################
 ## Actuator EndPoints configuration
 #############################################################################
@@ -30,3 +44,9 @@ endpoints:
     enabled: true
   monitors:
     enabled: true
+
+
+flyway:
+  schemas: public
+  url: jdbc:h2:mem:GROCERY_DATABASE
+  locations: filesystem:db/migration
