@@ -1,0 +1,65 @@
+= Cash Register
+
+Application for Spring Framework study
+
+== Tech
+
+* Spring (link:https://cloud.spring.io/spring-cloud-sleuth[Spring Cloud Sleuth], link:https://projects.spring.io/spring-data-mongodb/[Spring Data MongoDB], link:https://spring.io/guides/gs/actuator-service[Spring Boot Actuator], link:https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-devtools.html[Spring Boot Devtools], link:https://spring.io/projects/spring-restdocs[Spring REST Docs], link:https://cloud.spring.io/spring-cloud-contract/[Spring Cloud Contract])
+* link:https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#production-ready-metrics[Micrometer]
+* Data Base (link:https://www.mongodb.com/[MongoDB])
+* link:https://www.docker.com[Docker]
+* link:https://asciidoctor.org[Asciidoctor]
+* link:https://gradle.org[Gradle]
+
+== Project structure
+
+
+```
+├── docker
+├── docs
+├── gradle
+
+
+
+ - `docker` - Directory with docker images
+ - `docs` - Directory with project documentation generated from tests
+ - `gradle` - Directory with plugins settings
+
+```
+
+== Commands
+[TODO]
+=== Database configuration (Docker)
+
+ Execute the command below into docker directory.
+
+[source,shell]
+----
+docker-compose up
+----
+
+
+=== Run Tests
+
+ Run gradle build command for tests execution
+
+[source,shell]
+----
+./gradlew clean build
+----
+
+=== Starting the project
+
+    Start the project with default profile (local) at the server port 9070 (http://localhost:8080)
+
+[source,shell]
+----
+./gradlew bootrun
+----
+
+=== Starting the project with specific profile
+
+[source,shell]
+----
+ ./gradlew bootRun --args='--spring.profiles.active=contract-test'
+----
