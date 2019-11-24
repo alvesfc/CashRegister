@@ -63,7 +63,7 @@ contracts {
     packageWithBaseClasses = 'org.grocery.story.cash.register'
 
     baseClassMappings {
-        baseClassMapping(".*success.*create.*", "org.grocery.story.cash.register.SuccessBase")
+        baseClassMapping(".*success.*create.*", "org.grocery.store.cash.register.SuccessBase")
 
         baseClassMapping(".*fail.*create.*", "org.grocery.story.cash.register.FailBase")
     }
