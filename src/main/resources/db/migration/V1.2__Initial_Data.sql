@@ -8,15 +8,15 @@ INSERT INTO public.discounts(
 
 INSERT INTO public.discounts(
 	idt_discount, nam_type, num_value, num_range)
-	VALUES (nextval('idt_discount_sq'),'SECOND_FREE', 0,1);
+	VALUES (nextval('idt_discount_sq'),'PERCENT', 100,1);
 
 INSERT INTO public.discounts(
 	idt_discount, nam_type, num_value, num_range)
-	VALUES (nextval('idt_discount_sq'),'SECOND_50_OFF', 50,1);
+	VALUES (nextval('idt_discount_sq'),'PERCENT', 50,1);
 
 INSERT INTO public.discounts(
 	idt_discount, nam_type, num_value, num_range)
-	VALUES (nextval('idt_discount_sq'),'BUY_TWO_GET_ONE_FREE', 0,2);
+	VALUES (nextval('idt_discount_sq'),'PERCENT', 0,2);
 
 
 INSERT INTO public.coupons(

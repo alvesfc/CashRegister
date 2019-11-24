@@ -38,17 +38,13 @@ import static org.springframework.restdocs.payload.PayloadDocumentation.response
 @AutoConfigureRestDocs(outputDir = "build/generated-snippets")
 public abstract class BaseTests {
 
-    @Autowired
-    private WebApplicationContext context;
-
-    @Autowired
-    protected ObjectMapper objectMapper;
-
     @Rule
     public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation();
-
+    @Autowired
+    protected ObjectMapper objectMapper;
     protected MockMvc mockMvc;
-
+    @Autowired
+    private WebApplicationContext context;
     private Map<String, List<FieldDescriptor>> fieldDescriptors;
 
     public BaseTests(Map<String, List<FieldDescriptor>> fieldDescriptors) {
